@@ -51,7 +51,8 @@ This code snippet demonstrates a dynamic allocation technique for reading user i
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define EXPANSION_FACTOR 1.5```
+#define EXPANSION_FACTOR 1.5
+```
 
 ```c
     ...
