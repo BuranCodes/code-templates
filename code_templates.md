@@ -46,7 +46,7 @@ This code snippet demonstrates a dynamic allocation technique for reading user i
 
 4. The input string is stored in the `input` variable for further processing and then freed afterwards.
 
-5. After the input is processed, the allocated memory is freed using free(input) to avoid memory leaks.
+5. After the input is processed, the allocated memory is freed using `free(input)` to avoid memory leaks.
 ```c
 #include <stdio.h>
 #include <stdlib.h>
