@@ -47,10 +47,14 @@ This code snippet demonstrates a dynamic allocation technique for reading user i
 4. The input string is stored in the `input` variable for further processing and then freed afterwards.
 
 5. After the input is processed, the allocated memory is freed using free(input) to avoid memory leaks.
-
-`#define EXPANSION_FACTOR 1.5`
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define EXPANSION_FACTOR 1.5```
 
 ```c
+    ...
     fputs("Enter any text:\n", stdout);
     char tmpc[2] = "0\0";
     char *input = NULL;
