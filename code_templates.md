@@ -47,6 +47,7 @@ This code snippet demonstrates a dynamic allocation technique for reading user i
 4. The input string is stored in the `input` variable for further processing and then freed afterwards.
 
 5. After the input is processed, the allocated memory is freed using `free(input)` to avoid memory leaks.
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -84,6 +85,45 @@ This code snippet demonstrates a dynamic allocation technique for reading user i
     }
     ...
     free(input);
+```
+
+### Videogame-Style Text Output
+
+This code template allows you to output text in a way that resembles the gradual display seen in certain videogames. Each character is printed with a small delay, creating an effect similar to in-game text dialogues.
+
+### Code Explanation
+
+1. The code uses a `for` loop to iterate over each character in the `text` string.
+2. If the current character is a newline ('`\n`'), it pauses for one second using the `Sleep` function. This creates a line break effect in the output.
+3. The character is then printed to the standard output using `fputc`.
+4. The standard output is flushed using `fflush` to ensure the character is immediately displayed.
+5. A short delay of 30 milliseconds is introduced using `Sleep` before proceeding to the next character.
+
+This code template provides a simple and reusable way to create in-game text displays or other gradual text output effects in your programs.
+
+### Usage
+
+1. Replace the `"..."` in the `char *text` variable with the desired text you want to display.
+2. Run the program.
+3. The text will be output character by character, with a small delay between each character. Newlines ('`\n`') will introduce a pause of one second.
+
+```c
+int main(void)
+{
+    char *text = "...";
+
+    for (int i = 0; i < strlen(text); i++) {
+        if (text[i] == '\n') {
+            Sleep(1000);
+        }
+        if ((fputc((int)text[i], stdout)) == EOF)
+            perror("fputc() failed");
+        fflush(stdout);
+        Sleep(30);
+    }
+
+    return EXIT_SUCCESS;
+}
 ```
 
 ## Python
