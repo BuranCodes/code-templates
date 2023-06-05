@@ -107,14 +107,15 @@ This code template provides a simple and reusable way to create in-game text dis
 2. Run the program.
 3. The text will be output character by character, with a small delay between each character. Newlines ('`\n`') will introduce a pause of one second.
 
-Note that it depends on `windows.h` and `stdio.h`.
+Note that Windows version depends on `windows.h`, while Linux version depends on `unistd.h`.
+
+**Windows**:
 
 ```c
 #include <windows.h>
 #include <stdio.h>
-```
+#include <string.h>
 
-```c
 int main(void)
 {
     char *text = "...";
@@ -129,6 +130,30 @@ int main(void)
     }
 
     return EXIT_SUCCESS;
+}
+```
+
+**Linux**:
+
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char *text = "...";
+
+    for (int i = 0; i < strlen(text); i++) {
+        if (text[i] == '\n')
+            sleep(1);
+        if ((fputc((int)text[i], stdout)) == EOF)
+            perror("fputc() failed");
+        fflush(stdout);
+        usleep(30000);
+    }
+
+    return 0;
 }
 ```
 
