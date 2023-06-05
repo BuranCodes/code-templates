@@ -120,9 +120,8 @@ int main(void)
     char *text = "...";
 
     for (int i = 0; i < strlen(text); i++) {
-        if (text[i] == '\n') {
+        if (text[i] == '\n')
             Sleep(1000);
-        }
         if ((fputc((int)text[i], stdout)) == EOF)
             perror("fputc() failed");
         fflush(stdout);
