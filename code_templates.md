@@ -107,6 +107,13 @@ This code template provides a simple and reusable way to create in-game text dis
 2. Run the program.
 3. The text will be output character by character, with a small delay between each character. Newlines ('`\n`') will introduce a pause of one second.
 
+Note that it depends on `windows.h` and `stdio.h`.
+
+```c
+#include <windows.h>
+#include <stdio.h>
+```
+
 ```c
 int main(void)
 {
