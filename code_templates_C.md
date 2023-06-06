@@ -156,7 +156,3 @@ int main(void)
     return 0;
 }
 ```
-
-## Python
-
-Heh, empty... for now :D
